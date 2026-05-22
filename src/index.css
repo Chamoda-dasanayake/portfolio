@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(196, 138, 42, 0.4) transparent;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0b0a08 !important;
+    color: #e8e4dd;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(196, 138, 42, 0.4);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(196, 138, 42, 0.6);
+  }
+
+  ::selection {
+    background: rgba(196, 138, 42, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  /* Glass morphism cards */
+  .glass {
+    background: rgba(28, 25, 21, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card {
+    background: rgba(28, 25, 21, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 162, 74, 0.08);
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(212, 162, 74, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 162, 74, 0.04);
+    transform: translateY(-4px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #d4a24a 0%, #e9c07e 50%, #c48a2a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-text-warm {
+    background: linear-gradient(135deg, #d4a24a 0%, #b8860b 50%, #e9c07e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    position: relative;
+    background: rgba(28, 25, 21, 0.8);
+    border-radius: 1.25rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.25rem;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(212, 162, 74, 0.4), rgba(196, 138, 42, 0.3), rgba(184, 134, 11, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-sm tracking-wide overflow-hidden transition-all duration-400;
+    background: linear-gradient(135deg, #c48a2a, #d4a24a);
+    color: #0b0a08;
+    box-shadow: 0 4px 20px rgba(196, 138, 42, 0.25);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 30px rgba(196, 138, 42, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply relative inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-sm tracking-wide overflow-hidden transition-all duration-400;
+    background: transparent;
+    color: #d4a24a;
+    border: 1.5px solid rgba(212, 162, 74, 0.35);
+  }
+
+  .btn-outline:hover {
+    background: rgba(212, 162, 74, 0.08);
+    border-color: rgba(212, 162, 74, 0.6);
+    box-shadow: 0 0 30px rgba(212, 162, 74, 0.08);
+    transform: translateY(-3px);
+  }
+
+  /* Section headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
+  }
+
+  .section-subheading {
+    @apply text-base md:text-lg max-w-2xl mx-auto leading-relaxed;
+    color: #9c9588;
+  }
+
+  /* Tech badge */
+  .tech-badge {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium;
+    background: rgba(212, 162, 74, 0.06);
+    border: 1px solid rgba(212, 162, 74, 0.12);
+    color: #d4a24a;
+    transition: all 0.3s ease;
+  }
+
+  .tech-badge:hover {
+    background: rgba(212, 162, 74, 0.12);
+    border-color: rgba(212, 162, 74, 0.25);
+    transform: translateY(-2px);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(212, 162, 74, 0.2), 0 0 60px rgba(212, 162, 74, 0.05);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(212, 162, 74, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 162, 74, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
