@@ -162,33 +162,106 @@ export const projectsData = [
   }
 ];
 
-export const experienceData = [
+export const educationData = [
   {
-    year: "2024 - Present",
-    title: "AI/ML Engineering Intern",
-    company: "Tech Company",
-    description: "Developing and deploying production ML models and NLP pipelines. Working on RAG systems, LLM fine-tuning, and MLOps infrastructure using Python, LangChain, and cloud services.",
-    type: "work",
-  },
-  {
-    year: "2023 - 2024",
-    title: "Full Stack Developer Intern",
-    company: "Startup Inc.",
-    description: "Built and maintained scalable web applications using the MERN stack. Implemented real-time features, RESTful APIs, and responsive UI components serving thousands of users.",
-    type: "work",
-  },
-  {
-    year: "2022 - Present",
-    title: "B.Tech Computer Science",
-    company: "University Name",
-    description: "Pursuing a degree in Computer Science with a focus on Artificial Intelligence and Machine Learning. Active in coding competitions, open-source contributions, and research projects.",
-    type: "education",
+    year: "Current",
+    title: "BSc (Hons) Electronic and Computer Science",
+    institution: "University of Kelaniya",
+    description: "Reading for a degree with a focus on Artificial Intelligence, Machine Learning, and Full-Stack Development.\nCurrent GPA: 3.50",
   },
   {
     year: "2022",
-    title: "Open Source Contributor",
-    company: "Various Projects",
-    description: "Contributed to open-source projects in the AI/ML and web development ecosystem. Fixed bugs, added features, and improved documentation across multiple repositories.",
+    title: "Diploma in Information and Communication Technology - NVQ Level 5",
+    institution: "Vocational Training Authority",
+    description: "Completed vocational training diploma with practical and technical coursework.",
+  },
+  {
+    year: "2021",
+    title: "G.C.E. Advanced Level - Physical Science Stream",
+    institution: "St. Joseph's Balika Vidyalaya",
+    description: "Achieved BBB in Physical Science stream.",
+  },
+  {
+    year: "2017",
+    title: "G.C.E. Ordinary Level",
+    institution: "Kegalu Balika Vidyalaya",
+    description: "Passed with 9 'A' grades, demonstrating strong academic foundational skills.",
+  },
+];
+
+export const certificatesData = [
+  {
+    title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    issuer: "DeepLearning.AI",
+    date: "Issued February 24, 2026",
+    credentialId: "ORVL9CURU1E3",
+    description: "Build recommender systems with a collaborative filtering approach and a content-based deep learning method.Use unsupervised learning techniques for unsupervised learning: including clustering and anomaly detection",
+    link: "https://www.coursera.org/account/accomplishments/verify/ORVL9CURU1E3",
+  },
+  {
+    title: "Supervised Machine Learning: Regression and Classification ",
+    issuer: "DeepLearning.AI, Stanford University",
+    date: "Issued Nov 2025",
+    credentialId: "THRYI7UH1S6P",
+    description: "Build machine learning models in Python using popular machine learning libraries NumPy & scikit-learn.Build & train supervised machine learning models for prediction & binary classification tasks, including linear regression & logistic regression",
+    link: "https://www.coursera.org/account/accomplishments/verify/THRYI7UH1S6P",
+  },
+  {
+    title: "AI/ML Engineer - Stage 1",
+    issuer: "SLIIT",
+    date: "Issued Sep 2025",
+    description: "Completed the Stage 1 AI/ML course at SLIIT, gaining a solid foundation in core machine learning concepts, data preprocessing, and model evaluation techniques. Developed hands-on experience with basic algorithms and tools used in building introductory AI applications.",
+    link: "https://code.sliit.org/certificates/98ehmgy2mc",
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco",
+    date: "Issued Jul 2022",
+    description: "Completed the Introduction to Cybersecurity course by Cisco, gaining fundamental knowledge of cybersecurity principles, common threats, and basic defense strategies. Built awareness of how networks, systems, and data are protected against modern cyber risks.",
+    link: "https://www.credly.com/badges/7d6b386c-2ad8-4e1c-9c8d-1a3365d8020e/linked_in_profile",
+  },
+  {
+    title: "Python for beginners",
+    issuer: "Uom Open",
+    date: "Issued May 2025",
+    description: "Completed a Python programming course, gaining strong foundational skills in syntax, data structures, object-oriented programming, and problem-solving. Built hands-on experience by writing scripts and small applications to automate tasks and solve basic computational problems.",
+    link: "https://open.uom.lk/verify",
+  },
+  {
+    title: "Fundamentals of Generative AI ",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Issued Oct 2025",
+    description: "Completed the Fundamentals of Generative AI course, gaining a clear understanding of how generative models work, including text, image, and content generation techniques. Developed foundational knowledge of large language models and their real-world applications in modern AI systems.",
+  }
+];
+
+export const experienceData = [
+  {
+    year: "Present",
+    title: "Committee Member",
+    company: "ECS Club",
+    description: "Active committee member contributing to the organization of technical events, workshops, and student engagement activities within the Electronic and Computer Science community.",
+    type: "achievement",
+  },
+  {
+    year: "Present",
+    title: "Fundraising Coordinator (Poverty and Hunger Avenue)",
+    company: "Leo Club",
+    description: "Spearheaded fundraising initiatives focused on poverty alleviation and hunger relief. Organized charity drives and managed financial planning for community service projects.",
+    type: "achievement",
+  },
+  {
+    year: "Recent",
+    title: "Fundraising Coordinator",
+    company: "Medusa 1.0 (CTF Competition)",
+    description: "Managed sponsorships and financial logistics for Medusa 1.0, a premier Capture The Flag cybersecurity competition. Successfully secured partnerships with tech entities.",
+    type: "achievement",
+  },
+  {
+    year: "Recent",
+    title: "ER Coordinator",
+    company: "UOK Robot Battle 2.0",
+    description: "Served as the External Relations (ER) Coordinator for UOK Robot Battle 2.0. Handled public relations, participant registrations, and communications with external stakeholders.",
     type: "achievement",
   },
 ];
@@ -213,6 +286,8 @@ export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
+  { name: "Certificates", href: "#certificates" },
+  { name: "Volunteering", href: "#volunteering" },
   { name: "Contact", href: "#contact" },
 ];

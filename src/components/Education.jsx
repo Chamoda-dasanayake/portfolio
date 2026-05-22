@@ -1,24 +1,12 @@
 import { motion } from 'framer-motion';
-import { HiBriefcase, HiAcademicCap, HiStar } from 'react-icons/hi';
-import { experienceData } from '../data/portfolioData';
+import { HiAcademicCap } from 'react-icons/hi';
+import { educationData } from '../data/portfolioData';
 
-const iconMap = {
-  work: HiBriefcase,
-  education: HiAcademicCap,
-  achievement: HiStar,
-};
-
-const colorMap = {
-  work: '#c48a2a',
-  education: '#d4a24a',
-  achievement: '#e9c07e',
-};
-
-const Experience = () => {
+const Education = () => {
   return (
-    <section id="volunteering" className="relative py-8 md:py-12 overflow-hidden">
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full blur-[200px] opacity-[0.03]"
-        style={{ background: 'radial-gradient(circle, #c48a2a, transparent)' }} />
+    <section id="education" className="relative py-8 md:py-12 overflow-hidden">
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full blur-[200px] opacity-[0.03]"
+        style={{ background: 'radial-gradient(circle, #d4a24a, transparent)' }} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <motion.div
@@ -29,20 +17,17 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading text-white">
-            Volunteering & <span className="gradient-text">Leadership</span>
+            My <span className="gradient-text">Education</span>
           </h2>
           <p className="section-subheading mt-4">
-            Contributions, leadership roles, and community engagement
+            Academic background and qualifications
           </p>
         </motion.div>
 
         <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-[23px] top-0 bottom-0 w-px" style={{ background: 'linear-gradient(to bottom, rgba(196,138,42,0.3), rgba(212,162,74,0.15), transparent)' }} />
+          <div className="absolute left-[23px] top-0 bottom-0 w-px" style={{ background: 'linear-gradient(to bottom, rgba(212,162,74,0.3), rgba(212,162,74,0.15), transparent)' }} />
 
-          {experienceData.map((item, i) => {
-            const Icon = iconMap[item.type] || HiBriefcase;
-            const color = colorMap[item.type] || '#c48a2a';
-
+          {educationData.map((item, i) => {
             return (
               <motion.div
                 key={i}
@@ -56,11 +41,11 @@ const Experience = () => {
                   <div
                     className="w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110"
                     style={{
-                      background: `${color}12`,
-                      border: `1px solid ${color}25`,
+                      background: `#d4a24a12`,
+                      border: `1px solid #d4a24a25`,
                     }}
                   >
-                    <Icon size={18} color={color} />
+                    <HiAcademicCap size={18} color="#d4a24a" />
                   </div>
                 </div>
 
@@ -68,7 +53,7 @@ const Experience = () => {
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-2">
                     <div>
                       <h3 className="text-white font-semibold text-[17px]">{item.title}</h3>
-                      <p className="text-[13px] font-medium mt-1" style={{ color: '#6b6560' }}>{item.company}</p>
+                      <p className="text-[13px] font-medium mt-1" style={{ color: '#e9c07e' }}>{item.institution}</p>
                     </div>
                     <span className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full border border-[#d4a24a]/20 w-fit shrink-0" style={{ color: '#d4a24a', background: 'rgba(212, 162, 74, 0.05)' }}>
                       {item.year}
@@ -85,4 +70,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;
