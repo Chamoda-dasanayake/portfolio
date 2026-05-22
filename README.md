@@ -1,7 +1,6 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=Chamoda%20Dasanayake&fontSize=60&animation=fadeIn&fontAlignY=38&desc=AI/ML%20Engineer%20%7C%20Full-Stack%20Developer&descAlignY=55&descAlign=62" alt="Header Banner" />
 
   <h1 align="center">Personal Portfolio Website</h1>
 
@@ -12,7 +11,7 @@
     <a href="https://github.com/Chamoda-dasanayake/portfolio"><strong>Explore the Repository »</strong></a>
     <br />
     <br />
-    <a href="#">View Live Demo</a>
+    <a href="https://chamoda-dasanayake.vercel.app/">View Live Demo</a>
     ·
     <a href="https://github.com/Chamoda-dasanayake/portfolio/issues">Report Bug</a>
     ·
