@@ -15,7 +15,7 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: '"Plus Jakarta Sans"', system-ui, -apple-system, sans-serif;
     background-color: #0b0a08 !important;
     color: #e8e4dd;
     overflow-x: hidden;
@@ -38,6 +38,24 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(196, 138, 42, 0.6);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(212, 162, 74, 0.2);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 162, 74, 0.4);
   }
 
   ::selection {

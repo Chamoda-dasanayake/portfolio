@@ -8,10 +8,34 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ridmichamoda@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: "New Message from Portfolio"
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Something went wrong! Please try again later.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong! Please try again later.");
+    }
   };
 
   const socials = [
@@ -21,7 +45,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-12 md:py-16 overflow-hidden">
+    <section id="contact" className="relative py-10 md:py-12 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[200px] opacity-[0.03]"
         style={{ background: 'radial-gradient(circle, #c48a2a, transparent)' }} />
 

@@ -13,7 +13,7 @@ const Projects = () => {
     : projectsData.filter(p => Array.isArray(p.category) ? p.category.includes(activeCategory) : p.category === activeCategory);
 
   return (
-    <section id="projects" className="relative py-12 md:py-20 overflow-hidden">
+    <section id="projects" className="relative py-10 md:py-12 overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full blur-[180px] opacity-[0.03]"
         style={{ background: 'radial-gradient(circle, #c48a2a, transparent)' }} />
 
@@ -34,34 +34,36 @@ const Projects = () => {
         </motion.div>
 
         {/* Category filter */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-2 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat
-                  ? 'text-white'
-                  : 'border border-white/5 hover:border-white/10'
-              }`}
-              style={activeCategory === cat ? {
-                background: 'linear-gradient(135deg, #c48a2a, #d4a24a)',
-                color: '#0b0a08',
-                boxShadow: '0 4px 20px rgba(196, 138, 42, 0.2)',
-              } : {
-                color: '#9c9588',
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
+        <div className="w-full overflow-hidden mb-8">
+          <motion.div
+            className="flex justify-start md:justify-center gap-2 pb-4 overflow-x-auto custom-scrollbar w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+                  activeCategory === cat
+                    ? 'text-white'
+                    : 'border border-white/5 hover:border-white/10'
+                }`}
+                style={activeCategory === cat ? {
+                  background: 'linear-gradient(135deg, #c48a2a, #d4a24a)',
+                  color: '#0b0a08',
+                  boxShadow: '0 4px 20px rgba(196, 138, 42, 0.2)',
+                } : {
+                  color: '#9c9588',
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Projects grid */}
         <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

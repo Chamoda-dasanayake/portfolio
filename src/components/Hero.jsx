@@ -118,7 +118,7 @@ const Hero = () => {
           <img
             src="/chamoda.jpg"
             alt="Chamoda Dasanayake Background"
-            className="absolute top-0 right-[-10%] md:right-[-2%] lg:right-0 w-[130%] md:w-[75%] lg:w-[60%] h-[110vh] -mt-[5vh] object-cover object-center lg:object-right opacity-80 lg:opacity-[0.95]"
+            className="absolute top-0 right-[-10%] md:right-[-2%] lg:right-0 w-[130%] md:w-[75%] lg:w-[60%] h-[110vh] -mt-[5vh] object-cover object-center lg:object-right opacity-30 md:opacity-80 lg:opacity-[0.95]"
             style={{ 
               filter: 'contrast(1.05) brightness(0.95)',
               maskImage: 'linear-gradient(to right, transparent 0%, black 25%, black 100%)',
@@ -141,7 +141,7 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-3xl text-center lg:text-left pt-12 md:pt-20">
+        <div className="max-w-3xl text-center lg:text-left pt-12 md:pt-20 mx-auto lg:mx-0">
           {/* Main heading */}
           <motion.h1
             variants={childVariants}
@@ -165,7 +165,7 @@ const Hero = () => {
           {/* Tagline */}
           <motion.p
             variants={childVariants}
-            className="text-base md:text-lg max-w-xl mb-10 leading-relaxed lg:mx-0 mx-auto"
+            className="text-base md:text-lg max-w-xl mb-10 leading-relaxed lg:mx-0 mx-auto px-2 sm:px-0"
             style={{ color: '#9c9588' }}
           >
             {personalInfo.tagline}
@@ -174,7 +174,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <motion.div
             variants={childVariants}
-            className="flex flex-wrap items-center lg:justify-start justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 w-full sm:w-auto px-4 sm:px-0"
           >
             <motion.a
               href="#projects"
@@ -182,7 +182,7 @@ const Hero = () => {
                 e.preventDefault();
                 document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="btn-primary"
+              className="btn-primary w-full sm:w-auto"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -191,7 +191,10 @@ const Hero = () => {
             </motion.a>
             <motion.a
               href={personalInfo.resumeUrl}
-              className="btn-outline"
+              download="Chamoda_Dasanayake_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline w-full sm:w-auto"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >

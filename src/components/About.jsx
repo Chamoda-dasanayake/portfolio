@@ -22,7 +22,7 @@ const About = () => {
   const stats = aboutData.stats;
 
   return (
-    <section id="about" className="relative py-10 md:py-16 overflow-hidden">
+    <section id="about" className="relative py-10 md:py-12 overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[200px] opacity-[0.03]"
         style={{ background: 'radial-gradient(circle, #c48a2a, transparent)' }} />

@@ -15,7 +15,7 @@ export const personalInfo = {
   email: "ridmichamoda@gmail.com",
   github: "https://github.com/Chamoda-dasanayake",
   linkedin: "https://www.linkedin.com/in/chamoda-dasanayake-7258aa291/",
-  resumeUrl: "#",
+  resumeUrl: "/Chamoda_Dasanayake_CV.pdf",
   location: "Kegalle, Sri Lanka",
 };
 
@@ -112,7 +112,7 @@ export const projectsData = [
   },
   {
     title: "QA RAG PDF Chatbot",
-    description: "An intelligent PDF question-answering chatbot powered by RAG architecture. Upload any PDF document and ask natural language questions — the system retrieves relevant passages and generates accurate answers.",
+    description: "An intelligent PDF question-answering chatbot powered by RAG architecture. Upload any PDF document and ask natural language questions - the system retrieves relevant passages and generates accurate answers.",
     image: null,
     tags: ["Python", "RAG", "LLM", "PDF", "NLP"],
     category: "AI",
@@ -166,26 +166,26 @@ export const educationData = [
   {
     year: "Current",
     title: "BSc (Hons) Electronic and Computer Science",
-    institution: "University of Kelaniya",
-    description: "Reading for a degree with a focus on Artificial Intelligence, Machine Learning, and Full-Stack Development.\nCurrent GPA: 3.50",
+    institution: "University of Kelaniya, Sri Lanka",
+    description: "Currently pursuing a multidisciplinary degree focused on Artificial Intelligence, Machine Learning, Software Engineering, and Full-Stack Development. Actively developing expertise in intelligent systems, scalable application development, and modern computing technologies through academic projects and hands-on engineering experience.\n\nCurrent GPA: 3.50/4.00",
   },
   {
     year: "2022",
-    title: "Diploma in Information and Communication Technology - NVQ Level 5",
-    institution: "Vocational Training Authority",
-    description: "Completed vocational training diploma with practical and technical coursework.",
+    title: "Diploma in Information and Communication Technology (NVQ Level 5)",
+    institution: "Vocational Training Authority, Sri Lanka",
+    description: "Completed a comprehensive vocational training diploma focused on practical computing, software development, networking, and technical problem-solving. Strengthened hands-on technical skills through industry-oriented coursework and real-world ICT applications.",
   },
   {
     year: "2021",
     title: "G.C.E. Advanced Level - Physical Science Stream",
-    institution: "St. Joseph's Balika Vidyalaya",
-    description: "Achieved BBB in Physical Science stream.",
+    institution: "St. Joseph's Balika Vidyalaya, Kegalle",
+    description: "Combined Maths: B\nPhysics: B\nChemistry: B"
   },
   {
     year: "2017",
     title: "G.C.E. Ordinary Level",
-    institution: "Kegalu Balika Vidyalaya",
-    description: "Passed with 9 'A' grades, demonstrating strong academic foundational skills.",
+    institution: "Kegalu Balika Vidyalaya, Kegalle",
+    description: "Completed G.C.E. Ordinary Level examinations with outstanding academic performance, achieving 9 A passes.",
   },
 ];
 
@@ -262,6 +262,13 @@ export const experienceData = [
     title: "ER Coordinator",
     company: "UOK Robot Battle 2.0",
     description: "Served as the External Relations (ER) Coordinator for UOK Robot Battle 2.0. Handled public relations, participant registrations, and communications with external stakeholders.",
+    type: "achievement",
+  },
+  {
+    year: "2017",
+    title: "Student Leadership Volunteer – School Prefect",
+    company: "Kegalu Balika Vidyalaya",
+    description: "Served as a School Prefect, contributing to student coordination, discipline management, and school event support. Demonstrated leadership, responsibility, and teamwork in maintaining a positive school environment.",
     type: "achievement",
   },
 ];

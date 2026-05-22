@@ -16,7 +16,7 @@ const colorMap = {
 
 const Experience = () => {
   return (
-    <section id="volunteering" className="relative py-8 md:py-12 overflow-hidden">
+    <section id="volunteering" className="relative py-10 md:py-12 overflow-hidden">
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full blur-[200px] opacity-[0.03]"
         style={{ background: 'radial-gradient(circle, #c48a2a, transparent)' }} />
 
