@@ -11,46 +11,58 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Send to n8n webhook (for user reply/automation)
-      const n8nRequest = fetch("https://chamodadasanayake.app.n8n.cloud/webhook/19cf94e0-75be-43a5-84a4-43dae06f6b4d", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        })
-      });
+      // 1. Send to FormSubmit first (to notify your email)
+      let formSubmitSuccess = false;
+      try {
+        const fsRes = await fetch("https://formsubmit.co/ajax/ridmichamoda@gmail.com", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+          },
+          body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
+              _subject: "New Message from Portfolio"
+          })
+        });
+        formSubmitSuccess = fsRes.ok;
+        if (!fsRes.ok) console.error("FormSubmit response not OK:", await fsRes.text());
+      } catch (err) {
+        console.error("FormSubmit network error:", err);
+      }
 
-      // Send to FormSubmit (to notify your email)
-      const formSubmitRequest = fetch("https://formsubmit.co/ajax/ridmichamoda@gmail.com", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
+      // 2. Send to n8n webhook (for user reply/automation)
+      let n8nSuccess = false;
+      try {
+        const n8nRes = await fetch("https://chamodadasanayake.app.n8n.cloud/webhook/19cf94e0-75be-43a5-84a4-43dae06f6b4d", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
             name: formData.name,
             email: formData.email,
-            message: formData.message,
-            _subject: "New Message from Portfolio"
-        })
-      });
+            message: formData.message
+          })
+        });
+        n8nSuccess = n8nRes.ok;
+        if (!n8nRes.ok) console.error("n8n response not OK:", await n8nRes.text());
+      } catch (err) {
+        console.error("n8n network error:", err);
+      }
 
-      // Wait for both requests to finish
-      const [n8nResponse, formSubmitResponse] = await Promise.all([n8nRequest, formSubmitRequest]);
-
-      if (n8nResponse.ok || formSubmitResponse.ok) {
+      // If at least one succeeds, show success message
+      if (n8nSuccess || formSubmitSuccess) {
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        alert("Something went wrong! Please try again later.");
+        alert("Something went wrong! Both services failed. Please try again later.");
       }
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("Form submission overarching error:", error);
       alert("Something went wrong! Please try again later.");
     }
   };
