@@ -35,6 +35,7 @@ The design focuses on a clean, professional, and dark-themed aesthetic with smoo
 * **Skills Visualization:** Neatly organized categories for AI & ML, Backend, Frontend, and Data/MLOps.
 * **Interactive Elements:** Smooth scrolling, elegant hover effects, and engaging entry animations.
 * **Fully Responsive:** Beautifully functional across all devices, from mobile phones to ultra-wide desktop monitors.
+* **Automated Contact Form:** Powered by n8n - visitors receive an instant auto-reply and messages are forwarded directly to my inbox.
 
 ### 🛠 Built With
 
