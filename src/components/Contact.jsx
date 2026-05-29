@@ -11,17 +11,15 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formsubmit.co/ajax/ridmichamoda@gmail.com", {
+      const response = await fetch("https://chamodadasanayake.app.n8n.cloud/webhook/19cf94e0-75be-43a5-84a4-43dae06f6b4d", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            _subject: "New Message from Portfolio"
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
         })
       });
 
