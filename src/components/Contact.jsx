@@ -11,7 +11,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://chamodadasanayake.app.n8n.cloud/webhook/19cf94e0-75be-43a5-84a4-43dae06f6b4d", {
+      // Send to n8n webhook (for user reply/automation)
+      const n8nRequest = fetch("https://chamodadasanayake.app.n8n.cloud/webhook/19cf94e0-75be-43a5-84a4-43dae06f6b4d", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -23,7 +24,25 @@ const Contact = () => {
         })
       });
 
-      if (response.ok) {
+      // Send to FormSubmit (to notify your email)
+      const formSubmitRequest = fetch("https://formsubmit.co/ajax/ridmichamoda@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: "New Message from Portfolio"
+        })
+      });
+
+      // Wait for both requests to finish
+      const [n8nResponse, formSubmitResponse] = await Promise.all([n8nRequest, formSubmitRequest]);
+
+      if (n8nResponse.ok || formSubmitResponse.ok) {
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
